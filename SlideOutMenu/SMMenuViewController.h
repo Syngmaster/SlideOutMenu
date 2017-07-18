@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SMMenuViewController.h
 //  SlideOutMenu
 //
 //  Created by Syngmaster on 18/07/2017.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface SMMenuViewController : UIViewController
 
+- (IBAction)dismissAction:(UIButton *)sender;
 
 @end
-

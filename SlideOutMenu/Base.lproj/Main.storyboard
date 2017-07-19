@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,7 +34,7 @@
                         <color key="backgroundColor" red="1" green="0.87323717950000002" blue="0.32145655350000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <segue destination="7W3-gF-WqM" kind="presentation" identifier="showMenu" id="9MI-Xr-c9c"/>
+                        <segue destination="7W3-gF-WqM" kind="presentation" identifier="showMenu" id="AU5-Hu-DDu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -43,7 +44,7 @@
         <!--Menu View Controller-->
         <scene sceneID="IUb-SX-cx7">
             <objects>
-                <viewController id="7W3-gF-WqM" customClass="SMMenuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SMMenuViewController" id="7W3-gF-WqM" customClass="SMMenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yBH-kI-ZwC"/>
                         <viewControllerLayoutGuide type="bottom" id="OQZ-BW-E0D"/>
@@ -52,10 +53,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3V-bW-fj4">
-                                <rect key="frame" x="320" y="20" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Close">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3V-bW-fj4">
+                                <rect key="frame" x="300" y="20" width="75" height="647"/>
+                                <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -64,6 +64,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OQZ-BW-E0D" firstAttribute="top" secondItem="t3V-bW-fj4" secondAttribute="bottom" id="Ynv-S4-6pQ"/>
+                            <constraint firstItem="t3V-bW-fj4" firstAttribute="top" secondItem="yBH-kI-ZwC" secondAttribute="bottom" id="bev-Li-AeA"/>
+                            <constraint firstItem="t3V-bW-fj4" firstAttribute="width" secondItem="pNt-DV-Qb4" secondAttribute="width" multiplier="0.2" id="dAh-ps-Efm"/>
+                            <constraint firstAttribute="trailing" secondItem="t3V-bW-fj4" secondAttribute="trailing" id="xp7-1T-NIm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yas-w6-C7o" userLabel="First Responder" sceneMemberID="firstResponder"/>

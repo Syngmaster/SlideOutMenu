@@ -15,6 +15,7 @@
 		DC6EA4DD1F1E82750067C851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6EA4DB1F1E82750067C851 /* LaunchScreen.storyboard */; };
 		DC6EA4E61F1E8A090067C851 /* SMMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA4E51F1E8A090067C851 /* SMMenuViewController.m */; };
 		DC6EA4E91F1E8C430067C851 /* SMPresentMenuAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA4E81F1E8C430067C851 /* SMPresentMenuAnimator.m */; };
+		DC6EA4EC1F1F6AC70067C851 /* SMDismissMenuAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA4EB1F1F6AC70067C851 /* SMDismissMenuAnimator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		DC6EA4E51F1E8A090067C851 /* SMMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMenuViewController.m; sourceTree = "<group>"; };
 		DC6EA4E71F1E8C430067C851 /* SMPresentMenuAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPresentMenuAnimator.h; sourceTree = "<group>"; };
 		DC6EA4E81F1E8C430067C851 /* SMPresentMenuAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPresentMenuAnimator.m; sourceTree = "<group>"; };
+		DC6EA4EA1F1F6AC70067C851 /* SMDismissMenuAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDismissMenuAnimator.h; sourceTree = "<group>"; };
+		DC6EA4EB1F1F6AC70067C851 /* SMDismissMenuAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDismissMenuAnimator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				DC6EA4D11F1E82750067C851 /* AppDelegate.m */,
 				DC6EA4E71F1E8C430067C851 /* SMPresentMenuAnimator.h */,
 				DC6EA4E81F1E8C430067C851 /* SMPresentMenuAnimator.m */,
+				DC6EA4EA1F1F6AC70067C851 /* SMDismissMenuAnimator.h */,
+				DC6EA4EB1F1F6AC70067C851 /* SMDismissMenuAnimator.m */,
 				DC6EA4D31F1E82750067C851 /* SMMainViewController.h */,
 				DC6EA4D41F1E82750067C851 /* SMMainViewController.m */,
 				DC6EA4E41F1E8A090067C851 /* SMMenuViewController.h */,
@@ -161,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6EA4EC1F1F6AC70067C851 /* SMDismissMenuAnimator.m in Sources */,
 				DC6EA4D51F1E82750067C851 /* SMMainViewController.m in Sources */,
 				DC6EA4E91F1E8C430067C851 /* SMPresentMenuAnimator.m in Sources */,
 				DC6EA4E61F1E8A090067C851 /* SMMenuViewController.m in Sources */,

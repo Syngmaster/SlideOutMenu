@@ -9,6 +9,7 @@
 #import "SMMainViewController.h"
 #import "SMPresentMenuAnimator.h"
 #import "SMMenuViewController.h"
+#import "SMDismissMenuAnimator.h"
 
 @interface SMMainViewController () <UIViewControllerTransitioningDelegate>
 
@@ -27,20 +28,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)openMenuAction:(UIButton *)sender {
-    
-    [self performSegueWithIdentifier:@"showMenu" sender:nil];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    SMMenuViewController *DVC = segue.destinationViewController;
-    DVC.transitioningDelegate = self;
+- (IBAction)openMenuAction:(UIButton *)sender {
+    
+    SMMenuViewController *menuVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SMMenuViewController"];
+    menuVC.transitioningDelegate = self;
+    [self presentViewController:menuVC animated:YES completion:nil];
+    
 }
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     return [[SMPresentMenuAnimator alloc] init];
+}
+
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [[SMDismissMenuAnimator alloc] init];
 }
 
 

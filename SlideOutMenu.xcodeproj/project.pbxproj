@@ -16,6 +16,8 @@
 		DC6EA4E61F1E8A090067C851 /* SMMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA4E51F1E8A090067C851 /* SMMenuViewController.m */; };
 		DC6EA4E91F1E8C430067C851 /* SMPresentMenuAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA4E81F1E8C430067C851 /* SMPresentMenuAnimator.m */; };
 		DC6EA4EC1F1F6AC70067C851 /* SMDismissMenuAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6EA4EB1F1F6AC70067C851 /* SMDismissMenuAnimator.m */; };
+		DC8527471F265C310057D92B /* SMInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8527461F265C310057D92B /* SMInteractor.m */; };
+		DC85274A1F265D140057D92B /* SMTransitionData.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8527491F265D140057D92B /* SMTransitionData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,10 @@
 		DC6EA4E81F1E8C430067C851 /* SMPresentMenuAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPresentMenuAnimator.m; sourceTree = "<group>"; };
 		DC6EA4EA1F1F6AC70067C851 /* SMDismissMenuAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDismissMenuAnimator.h; sourceTree = "<group>"; };
 		DC6EA4EB1F1F6AC70067C851 /* SMDismissMenuAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMDismissMenuAnimator.m; sourceTree = "<group>"; };
+		DC8527451F265C310057D92B /* SMInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMInteractor.h; sourceTree = "<group>"; };
+		DC8527461F265C310057D92B /* SMInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMInteractor.m; sourceTree = "<group>"; };
+		DC8527481F265D140057D92B /* SMTransitionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTransitionData.h; sourceTree = "<group>"; };
+		DC8527491F265D140057D92B /* SMTransitionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTransitionData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,10 @@
 				DC6EA4D41F1E82750067C851 /* SMMainViewController.m */,
 				DC6EA4E41F1E8A090067C851 /* SMMenuViewController.h */,
 				DC6EA4E51F1E8A090067C851 /* SMMenuViewController.m */,
+				DC8527451F265C310057D92B /* SMInteractor.h */,
+				DC8527461F265C310057D92B /* SMInteractor.m */,
+				DC8527481F265D140057D92B /* SMTransitionData.h */,
+				DC8527491F265D140057D92B /* SMTransitionData.m */,
 				DC6EA4D61F1E82750067C851 /* Main.storyboard */,
 				DC6EA4D91F1E82750067C851 /* Assets.xcassets */,
 				DC6EA4DB1F1E82750067C851 /* LaunchScreen.storyboard */,
@@ -168,8 +178,10 @@
 			files = (
 				DC6EA4EC1F1F6AC70067C851 /* SMDismissMenuAnimator.m in Sources */,
 				DC6EA4D51F1E82750067C851 /* SMMainViewController.m in Sources */,
+				DC85274A1F265D140057D92B /* SMTransitionData.m in Sources */,
 				DC6EA4E91F1E8C430067C851 /* SMPresentMenuAnimator.m in Sources */,
 				DC6EA4E61F1E8A090067C851 /* SMMenuViewController.m in Sources */,
+				DC8527471F265C310057D92B /* SMInteractor.m in Sources */,
 				DC6EA4D21F1E82750067C851 /* AppDelegate.m in Sources */,
 				DC6EA4CF1F1E82750067C851 /* main.m in Sources */,
 			);
@@ -332,6 +344,7 @@
 				DC6EA4E31F1E82750067C851 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

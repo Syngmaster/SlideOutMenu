@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class SMInteractor;
+
 @interface SMMenuViewController : UIViewController
+
+@property (strong, nonatomic) UIPercentDrivenInteractiveTransition *interactiveTransition;
+
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 - (IBAction)dismissAction:(UIButton *)sender;
 

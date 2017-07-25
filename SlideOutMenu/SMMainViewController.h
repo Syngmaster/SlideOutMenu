@@ -11,6 +11,7 @@
 @interface SMMainViewController : UIViewController
 
 - (IBAction)openMenuAction:(UIButton *)sender;
+- (IBAction)edgePanGesture:(UIScreenEdgePanGestureRecognizer *)sender;
 
 @end
 

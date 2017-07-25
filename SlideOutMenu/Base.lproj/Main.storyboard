@@ -13,7 +13,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SMMainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SMMainViewController" id="BYZ-38-t0r" customClass="SMMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -27,17 +27,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu"/>
                                 <connections>
-                                    <action selector="openMenuAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iL5-3e-HcP"/>
+                                    <action selector="openMenuAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vZq-D0-7re"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.87323717950000002" blue="0.32145655350000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ACo-of-X0P" appends="YES" id="zdT-Zy-FUV"/>
+                        </connections>
                     </view>
                     <connections>
                         <segue destination="7W3-gF-WqM" kind="presentation" identifier="showMenu" id="AU5-Hu-DDu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer cancelsTouchesInView="NO" minimumNumberOfTouches="1" id="ACo-of-X0P">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="edgePanGesture:" destination="BYZ-38-t0r" id="DfJ-Um-3P2"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
@@ -55,15 +65,19 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3V-bW-fj4">
                                 <rect key="frame" x="300" y="20" width="75" height="647"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.28235294119999998" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissAction:" destination="7W3-gF-WqM" eventType="touchUpInside" id="SYR-ej-F9l"/>
+                                    <outletCollection property="gestureRecognizers" destination="f7e-oS-cVg" appends="YES" id="oQ7-wZ-fOe"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="OQZ-BW-E0D" firstAttribute="top" secondItem="t3V-bW-fj4" secondAttribute="bottom" id="Ynv-S4-6pQ"/>
                             <constraint firstItem="t3V-bW-fj4" firstAttribute="top" secondItem="yBH-kI-ZwC" secondAttribute="bottom" id="bev-Li-AeA"/>
@@ -71,8 +85,16 @@
                             <constraint firstAttribute="trailing" secondItem="t3V-bW-fj4" secondAttribute="trailing" id="xp7-1T-NIm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="closeButton" destination="t3V-bW-fj4" id="GFg-Fd-y0m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yas-w6-C7o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer cancelsTouchesInView="NO" minimumNumberOfTouches="1" id="f7e-oS-cVg">
+                    <connections>
+                        <action selector="handleGesture:" destination="7W3-gF-WqM" id="EVQ-CT-wvN"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="858" y="123"/>
         </scene>

@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class SMInteractor;
+typedef void (^ __nullable completionSegue)(void);
+
 @interface SMTransitionData : NSObject
 
 - (CGFloat)calculateProgress:(CGPoint)translationInView inView:(CGRect)viewBounds withDirection:(NSInteger)direction;
+
+- (void)mapGestureStateToInteractor:(UIGestureRecognizerState)gestureState withProgress:(CGFloat)progress andInterctor:(SMInteractor *_Nonnull)interactor onComplete:(completionSegue)completionSegue;
 
 @end

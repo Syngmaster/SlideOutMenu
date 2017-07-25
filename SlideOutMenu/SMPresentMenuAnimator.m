@@ -11,7 +11,7 @@
 @implementation SMPresentMenuAnimator
 
 - (NSTimeInterval)transitionDuration:(nullable id <UIViewControllerContextTransitioning>)transitionContext {
-    return 1;
+    return 0.5;
 }
 
 - (void)animateTransition:(nonnull id <UIViewControllerContextTransitioning>)transitionContext {
@@ -26,7 +26,7 @@
     UIView *snapshot = [fromVC.view snapshotViewAfterScreenUpdates:NO];
     snapshot.tag = 1;
     snapshot.userInteractionEnabled = NO;
-    snapshot.layer.opacity = 0.6;
+    snapshot.layer.opacity = 1.0;
     [containerView insertSubview:snapshot aboveSubview:toVC.view];
     fromVC.view.hidden = YES;
     

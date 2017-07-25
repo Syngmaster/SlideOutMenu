@@ -10,7 +10,6 @@
 #import "SMInteractor.h"
 
 
-typedef void(^completionSegue)(void);
 
 typedef NS_ENUM(NSInteger, Direction) {
     
@@ -99,7 +98,8 @@ typedef NS_ENUM(NSInteger, Direction) {
             break;
         case UIGestureRecognizerStateEnded:
             interactor.hasStarted = NO;
-            interactor.shouldFinish ? [interactor finishInteractiveTransition] : [interactor cancelInteractiveTransition];
+            interactor.shouldFinish ? [interactor finishInteractiveTransition]:
+                                      [interactor cancelInteractiveTransition];
             break;
         default:
             break;

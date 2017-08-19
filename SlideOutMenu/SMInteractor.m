@@ -15,7 +15,6 @@
     self = [super init];
     if (self) {
         self.hasStarted = NO;
-        self.shouldFinish = NO;
     }
     return self;
 }

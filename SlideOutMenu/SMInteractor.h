@@ -11,7 +11,5 @@
 @interface SMInteractor : UIPercentDrivenInteractiveTransition
 
 @property (assign, nonatomic) BOOL hasStarted;
-@property (assign, nonatomic) BOOL shouldFinish;
-
 
 @end

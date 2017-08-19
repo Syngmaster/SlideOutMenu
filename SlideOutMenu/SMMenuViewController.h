@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class SMInteractor;
+#import "SMInteractor.h"
 
 @interface SMMenuViewController : UIViewController
 
-@property (strong, nonatomic) UIPercentDrivenInteractiveTransition *interactiveTransition;
+@property (strong, nonatomic) SMInteractor *interactor;
 
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 

@@ -7,7 +7,6 @@
 //
 
 #import "SMMenuViewController.h"
-#import "SMTransitionData.h"
 #import "SMInteractor.h"
 
 @interface SMMenuViewController ()
@@ -18,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 }
 
 
@@ -34,19 +34,20 @@
     progress = MIN(1.0, progress);
     
     if (sender.state == UIGestureRecognizerStateBegan) {
+        self.interactor.hasStarted = YES;
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     else if (sender.state == UIGestureRecognizerStateChanged) {
-        [self.interactiveTransition updateInteractiveTransition:progress];
+        [self.interactor updateInteractiveTransition:progress];
     }
     else if (sender.state == UIGestureRecognizerStateEnded || sender.state == UIGestureRecognizerStateCancelled) {
+        self.interactor.hasStarted = NO;
         if (progress > 0.1) {
-            [self.interactiveTransition finishInteractiveTransition];
+            [self.interactor finishInteractiveTransition];
         }
         else {
-            [self.interactiveTransition cancelInteractiveTransition];
+            [self.interactor cancelInteractiveTransition];
         }
-        self.interactiveTransition = nil;
     }
 }
 

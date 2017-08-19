@@ -11,7 +11,6 @@
 #import "SMMenuViewController.h"
 #import "SMDismissMenuAnimator.h"
 #import "SMInteractor.h"
-#import "SMTransitionData.h"
 
 
 typedef NS_ENUM(NSInteger, Direction) {
@@ -25,7 +24,7 @@ typedef NS_ENUM(NSInteger, Direction) {
 
 @interface SMMainViewController () <UIViewControllerTransitioningDelegate>
 
-@property (strong, nonatomic) UIPercentDrivenInteractiveTransition *interactiveTransition;
+@property (strong, nonatomic) SMInteractor *interactor;
 
 @end
 
@@ -33,9 +32,9 @@ typedef NS_ENUM(NSInteger, Direction) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.interactor = [[SMInteractor alloc] init];
 
 }
-
 
 - (IBAction)edgePanGesture:(UIScreenEdgePanGestureRecognizer *)sender {
 
@@ -43,22 +42,23 @@ typedef NS_ENUM(NSInteger, Direction) {
     progress = MIN(1.0, MAX(0.0, progress));
     
     if (sender.state == UIGestureRecognizerStateBegan) {
-        self.interactiveTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
+        self.interactor.hasStarted = YES;
         [self performSegueWithIdentifier:@"showMenu" sender:nil];
     }
     else if (sender.state == UIGestureRecognizerStateChanged) {
-        [self.interactiveTransition updateInteractiveTransition:progress];
+        [self.interactor updateInteractiveTransition:progress];
     }
     else if (sender.state == UIGestureRecognizerStateEnded) {
+        self.interactor.hasStarted = NO;
         if (progress > 0.4) {
-            [self.interactiveTransition finishInteractiveTransition];
+            [self.interactor finishInteractiveTransition];
         }
         else {
-            [self.interactiveTransition cancelInteractiveTransition];
+            [self.interactor cancelInteractiveTransition];
         }
-        self.interactiveTransition = nil;
     } else if (sender.state == UIGestureRecognizerStateCancelled) {
-        [self.interactiveTransition cancelInteractiveTransition];
+        self.interactor.hasStarted = NO;
+        [self.interactor cancelInteractiveTransition];
     }
     
 }
@@ -72,6 +72,7 @@ typedef NS_ENUM(NSInteger, Direction) {
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SMMenuViewController *dvc = segue.destinationViewController;
     dvc.transitioningDelegate = self;
+    dvc.interactor = self.interactor;
 }
 
 
@@ -84,11 +85,11 @@ typedef NS_ENUM(NSInteger, Direction) {
 }
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator {
-    return self.interactiveTransition;
+    return self.interactor.hasStarted ? self.interactor : nil;
 }
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {
-    return self.interactiveTransition;
+    return self.interactor.hasStarted ? self.interactor : nil;
 }
 
 
